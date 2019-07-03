@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Russian gov openness</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- <script src="https://unpkg.com/d3@5.9.2/dist/d3.min.js"></script> -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
+
+  <style>
+    html, body{background-color:#141A30;}
+    h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif;font-weight:bold;}
+    .table{font-size:14px;}
+    .table a{border-bottom: 1px solid rgba(255,255,255, .5); transition: all .15s ease-in-out;}
+    .table a:hover{text-decoration:none; border-bottom-color:rgba(255,255,255, 1);}
+    .table span.cell-a, .table span.cell-b, .table span.cell-c{display:inline-block;width:24px;height:24px;}
+    /*.table thead th{border-top: none;}*/
+    .table td, .table th{/*padding-left:0;padding-right:0;*/border-top:none;}
+    .bg-success{background-color: #22EBDF!important;}
+    /*.bg-warning{background-color: #243057!important;}*/
+    .bg-warning{background-color: #8B91A9!important;}
+    .bg-error{background-color: #FF004C!important;}
+    .nav-item{border:0;}
+    a.nav-link{border:0;color:white;}
+  </style>
+</head>
+<body>
+
+  <div class="container py-5">
+    <div class="row">
+      <div class="col" id="tablecontainer">
+        <h4 class="mb-4 text-white">Рейтинг открытости</h4>
+        <p class="text-white">Здесь какое-то описание. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ea ipsum enim cupiditate, voluptatem temporibus nesciunt culpa quisquam aspernatur doloribus excepturi explicabo voluptatibus porro sint sunt, quasi voluptas ipsam laborum.</p>
+
+        <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#tableTabContent" role="tab">Министерства</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableFederalTabContent" role="tab">Службы</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="tableTabContent">
+            <div id="table"></div>
+          </div>
+          <div class="tab-pane fade" id="tableFederalTabContent">
+            <div id="tableFederal"></div>
+          </div>
+        </div>
+
+        
+        
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+  
+
+    createTable("#table", "data.csv");
+    createTable("#tableFederal", "data-federal-office.csv");
+
+
+
+    function createTable(id, datafile) {
+      var table = d3.select(id).append("table").attr("class", "table table-dark table-hover bg-transparent"),
+          thead = table.append("thead").append("tr"),
+          tbody = table.append("tbody");
+
+      thead.append("th").html("Наименование").attr("class", "mw-50 no-sort");
+      thead.append("th").html("Открытость&nbsp;информации");
+      thead.append("th").html("Открытые&nbsp;данные");
+      thead.append("th").html("Открытый&nbsp;диалог");
+
+
+      d3.csv(datafile, function(error, data) {
+        if (error) throw error;
+
+        console.log(data);
+
+        var tr = tbody.selectAll("tr")
+            .data(data)
+            .enter().append("tr");
+
+        tr.each(function(d) {
+          var self = d3.select(this);
+
+          self.append("td")
+              .append("a")
+                  .attr("href", d.link)
+                  .attr("class", "text-white")
+                  .attr("target", "_blank")
+                  .text(d.name);
+
+          self.append("td")
+              .attr("class", "text-center")
+                  .append("span")
+                  .attr("class", colorCode(d.info))
+                  .text(d.info);
+
+          self.append("td")
+              .attr("class", "text-center")
+                  .append("span")
+                  .attr("class", colorCode(d.data))
+                  .text(d.data);
+
+          self.append("td")
+              .attr("class", "text-center")
+                  .append("span")
+                  .attr("class", colorCode(d.dialog))
+                  .text(d.dialog);
+
+        });
+
+      });
+    }
+
+    function colorCode(rating) {
+        if (rating == "A") {return "text-center cell-a bg-success rounded-circle text-dark";}
+        else if (rating == "B") {return "text-center cell-b bg-warning rounded-circle";}
+        else if (rating == "C") {return "text-center cell-c bg-danger rounded-circle";}
+    }
+
+
+
+
+  $(document).ready(function() {
+
+    // $('#table .table').DataTable({
+    //     "order": [[ 1, "asc" ],[ 2, "asc" ],[ 3, "asc" ]],
+    //     "paging":      false,
+    //     "searching":   false,
+    //     "info":        false,
+    //     "retrieve":    true,
+    // });
+
+    setTimeout(function(){
+      $('table').DataTable({
+          "destroy":    true,
+          "order": [[ 1, "asc" ],[ 2, "asc" ],[ 3, "asc" ]],
+          "paging":      false,
+          "searching":   false,
+          "info":        false,
+      });
+    }, 100);
+
+    
+
+  });
+
+  </script>
+</body>
+</html>
