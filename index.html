@@ -33,6 +33,7 @@
     .bg-error{background-color: #FF004C!important;}
     .nav-item{border:0;}
     a.nav-link{border:0;color:white;}
+    a.btn-link.disabled,a.btn-link.disabled:hover{color:white;border-bottom:none;pointer-events:none;}
   </style>
 </head>
 <body>
@@ -103,7 +104,10 @@
           self.append("td")
               .append("a")
                   .attr("href", d.link)
-                  .attr("class", "text-white")
+                  .attr("class", function(d){
+                    if (d.link !== "") {return "text-white"}
+                    else  {return "text-white btn-link disabled"}
+                  })
                   .attr("target", "_blank")
                   .text(d.name);
 
@@ -140,14 +144,6 @@
 
 
   $(document).ready(function() {
-
-    // $('#table .table').DataTable({
-    //     "order": [[ 1, "asc" ],[ 2, "asc" ],[ 3, "asc" ]],
-    //     "paging":      false,
-    //     "searching":   false,
-    //     "info":        false,
-    //     "retrieve":    true,
-    // });
 
     setTimeout(function(){
       $('table').DataTable({
