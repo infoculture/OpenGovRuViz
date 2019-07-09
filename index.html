@@ -118,8 +118,6 @@
       d3.csv(datafile, function(error, data) {
         if (error) throw error;
 
-        console.log(data);
-
         var tr = tbody.selectAll("tr")
             .data(data)
             .enter().append("tr");
