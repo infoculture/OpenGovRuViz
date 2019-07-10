@@ -7,6 +7,12 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+<!--   <link rel="stylesheet" href="http://rating.tmweb.ru/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://rating.tmweb.ru/css/magnific-popup.css" />
+    <link rel="stylesheet" href="http://rating.tmweb.ru/css/font-icons.css" />
+    <link rel="stylesheet" href="http://rating.tmweb.ru/css/sliders.css" />
+    <link rel="stylesheet" href="http://rating.tmweb.ru/css/style.css" /> -->
+
   <!-- <script src="https://unpkg.com/d3@5.9.2/dist/d3.min.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -25,8 +31,11 @@
     .table a, a.link{border-bottom: 1px solid rgba(255,255,255, .5); transition: all .15s ease-in-out;}
     .table a:hover, a.link:hover{text-decoration:none; border-bottom-color:rgba(255,255,255, 1);}
     .table span.cell-a, .table span.cell-b, .table span.cell-c{display:inline-block;width:24px;height:24px;}
-    .table thead th{vertical-align:top;font-size:11px;}
-    .table td, .table th{/*padding-left:0;padding-right:0;*/border-top:none;}
+    .table thead tr th{vertical-align:top;font-size:11px;}
+    .table td, .table th{border-top:none;}
+    .table th.criteria-first{width:160px;}
+    .table th.criteria-second{width:120px;}
+    .table th.criteria-third{width:120px;}
     .bg-success{background-color: #22EBDF!important;}
     /*.bg-warning{background-color: #243057!important;}*/
     .bg-warning{background-color: #8B91A9!important;}
@@ -35,10 +44,12 @@
     a.nav-link{border:0;color:white;}
     a.btn-link.disabled,a.btn-link.disabled:hover{color:white;border-bottom:none;pointer-events:none;}
 
-    table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting{padding-right:auto;padding-left:16px;padding-right:12px;}
-    table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before{right:auto;left:.5em;}
+    table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting{padding-left:16px;padding-right:16px;}
+    table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before{right:auto;left:.6em;}
     table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after{right:auto;left:0;}
     table.dataTable thead .sorting:before, table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:before, table.dataTable thead .sorting_desc_disabled:after{top:.9em;bottom:auto;}
+
+    @media only screen and (max-width: 991px){ .tab-content{padding:0;overflow:hidden;overflow-x:auto;} .table th.criteria-first, .table th.criteria-second, .table th.criteria-third{width:auto;}}
   </style>
 </head>
 <body>
@@ -109,10 +120,10 @@
           thead = table.append("thead").append("tr"),
           tbody = table.append("tbody");
 
-      thead.append("th").html("Наименование").attr("class", "mw-50 no-sort");
-      thead.append("th").html("Открытость<br/>информации");
-      thead.append("th").html("Открытые<br/>данные");
-      thead.append("th").html("Открытый<br/>диалог");
+      thead.append("th").html("Наименование").attr("class", "no-sort");
+      thead.append("th").html("Открытость информации").attr("class", "criteria criteria-first");
+      thead.append("th").html("Открытые данные").attr("class", "criteria criteria-second");
+      thead.append("th").html("Открытый диалог").attr("class", "criteria criteria-third");
 
 
       d3.csv(datafile, function(error, data) {
