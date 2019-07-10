@@ -1,44 +1,82 @@
+<?php ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Russian gov openness</title>
+  <title>Рейтинг открытости государства</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta property="og:image" content="http://rating.tmweb.ru/img/og-img.jpg"/>
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap&subset=cyrillic" rel="stylesheet">
 
-<!--   <link rel="stylesheet" href="http://rating.tmweb.ru/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="http://rating.tmweb.ru/css/magnific-popup.css" />
-    <link rel="stylesheet" href="http://rating.tmweb.ru/css/font-icons.css" />
-    <link rel="stylesheet" href="http://rating.tmweb.ru/css/sliders.css" />
-    <link rel="stylesheet" href="http://rating.tmweb.ru/css/style.css" /> -->
+  <!-- Css -->
+  <link rel="stylesheet" href="http://rating.tmweb.ru/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://rating.tmweb.ru/css/magnific-popup.css" />
+  <link rel="stylesheet" href="http://rating.tmweb.ru/css/font-icons.css" />
+  <link rel="stylesheet" href="http://rating.tmweb.ru/css/sliders.css" />
+  <link rel="stylesheet" href="http://rating.tmweb.ru/css/style.css" />
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+<link rel="manifest" href="img/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+  <script type="text/javascript" src="http://rating.tmweb.ru/js/jquery.min.js"></script> 
+  <script type="text/javascript" src="http://rating.tmweb.ru/js/bootstrap.min.js"></script>
+  
 
   <!-- <script src="https://unpkg.com/d3@5.9.2/dist/d3.min.js"></script> -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css"/>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+  <script type="text/javascript" src="http://rating.tmweb.ru/js/plugins.js"></script> 
+  <script type="text/javascript" src="http://rating.tmweb.ru/js/scripts.js"></script>
+
+
+
+<!--   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap.min.css"/>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.4/css/fixedHeader.bootstrap4.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.4/css/fixedHeader.bootstrap.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.4/js/dataTables.fixedHeader.min.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.5/js/dataTables.fixedHeader.min.js"></script> -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.4/css/fixedHeader.bootstrap.min.css"/>
   <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.4/js/dataTables.fixedHeader.min.js"></script>
 
+
   <script src="https://d3js.org/d3.v3.min.js"></script>
-
-
-  <style>
+  <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+  <script src="https://yastatic.net/share2/share.js"></script>  
+<style>
     html, body{background-color:#141A30;}
     h1,h2,h3,h4,h5,h6{font-family:'Montserrat',sans-serif;font-weight:bold;}
     .table{font-size:14px;}
-    .table a, a.link{border-bottom: 1px solid rgba(255,255,255, .5); transition: all .15s ease-in-out;}
-    .table a:hover, a.link:hover{text-decoration:none; border-bottom-color:rgba(255,255,255, 1);}
-    .table span.cell-a, .table span.cell-b, .table span.cell-c{display:inline-block;width:24px;height:24px;}
-    .table thead tr th{vertical-align:top;font-size:11px;}
-    .table td, .table th{border-top:none;}
-    .table th.criteria-first{width:170px;}
-    .table th.criteria-second{width:120px;}
-    .table th.criteria-third{width:120px;}
+    .table a{border-bottom: 1px solid rgba(255,255,255, .5); transition: all .15s ease-in-out;color: white;}
+    .table a:hover{text-decoration:none; border-bottom-color:rgba(255,255,255, 1);}
+    .table span.cell-a, .table span.cell-b, .table span.cell-c{display:inline-block;width:24px;height:24px;border-radius: 20px;line-height: 1.8;}
+    /*.table thead th{border-top: none;}*/
+    .table td, .table th{/*padding-left:0;padding-right:0;*/border-top:none;}
     .bg-success{background-color: #22EBDF!important;}
     /*.bg-warning{background-color: #243057!important;}*/
     .bg-warning{background-color: #8B91A9!important;}
@@ -47,111 +85,177 @@
     a.nav-link{border:0;color:white;}
     a.btn-link.disabled,a.btn-link.disabled:hover{color:white;border-bottom:none;pointer-events:none;}
 
-    table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting{padding-left:16px;padding-right:16px;}
+    .table thead tr th{vertical-align:top;}
+    table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc, table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc, table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting{padding-left:18px;padding-right:18px;}
     table.dataTable thead .sorting:before, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_desc_disabled:before{right:auto;left:.6em;}
     table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:after{right:auto;left:0;}
-    table.dataTable thead .sorting:before, table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:before, table.dataTable thead .sorting_desc_disabled:after{top:.9em;bottom:auto;}
-
-    @media only screen and (max-width: 991px){ .tab-content{padding:0;overflow:hidden;overflow-x:auto;} .table th.criteria-first, .table th.criteria-second, .table th.criteria-third{width:auto;}}
-
-    .table-responsive{
-      /*height:400px;  */
-      /*overflow:scroll;*/
-    }
-     thead tr:nth-child(1) th{
-        background-color:#141A30;
-        position: sticky!important;
-        top: 0;
-        z-index: 10;
-      }
+    table.dataTable thead .sorting:before, table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:before, table.dataTable thead .sorting_desc_disabled:after{top:.7em;bottom:auto;}
+    /*table.dataTable.fixedHeader-floating{top:100px!important;background-color:#1F284D;}*/
+    /*@media only screen and (max-width: 991px){ table.dataTable.fixedHeader-floating{top:60px!important;} }*/
   </style>
+
 </head>
-<body>
 
-  <div class="container py-5">
-    <div class="row">
-      <div class="col" id="tablecontainer">
-        <h4 class="mb-4 text-white">Рейтинг открытости</h4>
-        <p class="text-white">Здесь какое-то описание. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem ea ipsum enim cupiditate, voluptatem temporibus nesciunt culpa quisquam aspernatur doloribus excepturi explicabo voluptatibus porro sint sunt, quasi voluptas ipsam laborum.</p>
+<body class="relative bg-light">
 
-        <ul class="nav nav-tabs mt-5" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#tableTabContent" role="tab">Министерства</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tableFederalTabContent" role="tab">Службы</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tableCorpTabContent" role="tab">Госкорпорации</a>
-          </li>
-        </ul>
-
-        <div class="tab-content" id="myTabContent">
-
-          <div class="tab-pane fade show active" id="tableTabContent">
-            <div class="table-responsive">
-              <div id="table"></div>
-            </div>
-          </div>
-
-          <div class="tab-pane fade" id="tableFederalTabContent">
-            <div id="tableFederal"></div>
-          </div>
-
-          <div class="tab-pane fade" id="tableCorpTabContent">
-            <div class="py-4 text-white">
-              <h2>Открытость госкорпораций</h2>
-              <p>В рамках подготовки рейтинга основные подходы разработанной методики оценки были применены к государственным корпорациям, которые хотя и не могут в полной мере рассматриваться как государственные органы власти, однако зачастую имеют присущие им функции, поэтому вопрос их открытости и подотчетности является предметом общественного интереса.</p>
-              <p>При том, что госкорпорации и квазигосударственные объединения получают существенные полномочия и многомиллиардные субсидии из государственного бюджета (Ростатом, ВЭБ.РФ), управляют множеством государственных предприятий («Ростех»), имеют важнейшие социальные функции институтов развития (Агентство стратегических инициатив), все они выведены из под требований к органам власти по открытости данных. На них не распространяются требования по открытости в отношении органов власти с одной стороны, с другой – не распространяются и требования, касающиеся прозрачности акционерных обществ. В результате возникает уникальная ситуация, когда часть деятельности государства фактически выпадает из под возможности какого-либо общественного контроля. </p>
-              <p>Являясь крупными получателями бюджетных средств, госкорпорации фактически работают на все общество, однако произведенная ценность остается недоступной обществу. Например, если сравнивать деятельность уже упомянутого выше «Роскосмоса» с деятельность американского NASA, то последнее публикует в свободном доступе в форме открытых данных большие объемы различной исследовательской информации, получаемой в космической отрасли. «Роскосмос» же никаких данных не публикует.</p>
-              <p>В то же время государственные корпорации, в силу особенностей их деятельности, нельзя полностью отождествить с государственными институтами. Например, от них требуется соблюдение коммерческой тайны – то есть, требования открытости по отношению к ним должны учитывать специфику их деятельности так, чтобы ей не препятствовать. Фактически, необходимо специальное нормативное регулирование открытости госкорпораций и других схожих организаций, которое бы, с одной стороны, учитывало их квазигосударственную деятельность, а с другой, – учитывало специфику. Пример такого разделения регулирования в российской практике присутствует в области закупок – государственные закупки регулируются своим Федеральным законом от 5 апреля 2013 года № 44-ФЗ, а для закупок госкорпораций работает более гибкий и либеральный, но также налагающий достаточно высокие обязательства по раскрытию информации Федеральный закон от 18 июля 2011 года № 223-ФЗ.</p>
-              <p>Руководствуясь этими соображениями, мы попробовали рассмотреть госкорпорации аналогично тому, как в рамках составления рейтинга открытости государственных органов рассматривали ФОИВ, но без формального рейтингования и руководствуясь определенными ограничениями.</p>
-              <p>Если по направлению открытости информации есть некоторый правовой регламент (в частности, Федеральный закон от 12 января 1996 года № 7-ФЗ «О некоммерческих организациях» и Федеральный закон «О закупках товаров, работ, услуг отдельными видами юридических лиц» от 18 июля 2011 года № 223-ФЗ), то по открытости данных отчетливых правовых требований к госкорпорациям вообще нет. Тем не менее, большинство госкорпораций данные публикуют. Формально это не дает право требовать публикаций данных от тех госкорпораций, которые данные не раскрывают (как «Ростех») или раскрывают в крайне незначительном объеме (как «Росатом»). Можно также предположить, что некоторые их данные публикуются опосредованно – например, передаются для публикации госорганам. Направление «открытого диалога» в рамках этого исследования по отношению к госкорпорациям не рассматривалось.</p>
-              <p>Наконец, необходимо отметить, что некоторые госкорпорации (например, «Росатом», «Роскосмос», «Ростех») представляют собой «облачные» структуры, объединяющие в себе множество разных организаций. Такая многосоставность и отсутствие формальных отправных точек требуют особой работы по выработке методов измерения ситуации по этому направлению.</p>
-              <p><a href="https://www.infoculture.ru/wp-content/uploads/2019/06/Otkrytost-doklad.pdf#page=87" target="blank_" class="link text-white">Карточки госкорпораций</a></p>
-            </div>
-          </div>
-
-        </div>
-
-        
-        
-
-      </div>
+  <!-- Preloader -->
+  <div class="loader-mask">
+    <div class="loader">
+      <div></div>
+      <div></div>
     </div>
   </div>
 
 
+  <!-- Sidenav -->
+ 
 
+  <div class="main-wrapper oh">
+
+    <header class="nav-type-1">
+    
+      <nav class="navbar navbar-static-top">
+        <div class="navigation">
+          <div class="container relative">
+
+            <div class="row">
+
+              <div class="navbar-header">
+          <div style="padding-left:15px;display: inline-block;">
+                    <a href="https://www.infoculture.ru/wp-content/uploads/2019/06/Otkrytost-doklad.pdf" class="btn btn-sm btn-color btn-icon sm-hidden" style="margin-top: 12px;background-color:#E50A4B"><span><i class="fa fa-download"></i>Скачать доклад</span></a>
+                    <a href="#" class="btn btn-sm btn-stroke btn-icon sm-hidden" data-toggle="modal" data-target="#myModal" style="margin: 12px 0 0 0;"><span><i class="fa fa-heart"></i>Поделиться</span></a>
+                    
+                  </div>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div> <!-- end navbar-header -->
+
+              <div class="nav-wrap right">
+                <div class="collapse navbar-collapse text-center" id="navbar-collapse">
+                  
+                  <ul class="nav navbar-nav navbar-right">
+
+          <li class="dropdown">
+                      <a href="/">Рейтинг</a>
+                    </li>
+
+                    <li class="dropdown">
+            <a href="/about.php">О проекте</a>
+                    </li>
+                    
+                    <a href="#" class="btn btn-sm btn-stroke btn-icon md-hidden" data-toggle="modal" data-target="#myModal" style="margin: 32px 0 0 32px;"><span><i class="fa fa-heart"></i>Поделиться</span></a>
+
+                    <a href="https://www.infoculture.ru/wp-content/uploads/2019/06/Otkrytost-doklad.pdf" class="btn btn-sm btn-color btn-icon md-hidden" style="margin: 32px 0 0 5px;background-color:#E50A4B"><span><i class="fa fa-download"></i>Скачать доклад</span></a>
+
+                  </ul> <!-- end menu -->
+                </div> <!-- end collapse -->
+              </div> <!-- end col -->         
+          
+            </div> <!-- end row -->
+          </div> <!-- end container -->
+        </div> <!-- end navigation -->
+      </nav> <!-- end navbar -->
+    </header>
+    
+        <div class="content-wrapper oh">
+      <main class="main-container">
+
+        <!-- Intro -->
+        <section class="section-wrap intro style-5 slide-top-h">
+          <div class="container intro-img">
+            <div class="row">
+              <div class="col-md-6">
+                <h1 class="uppercase slide-top">Рейтинг<br/>открытости<br/>государства</h1>
+                <h2 class="subtitle slide-top-h" style="color: #1f284d;">Развитие открытости государства требует наличия универсального инструмента, который бы позволял измерять степень открытости тех или иных государственных органов и организаций, а также фиксировать изменения в ее динамике. Это даст возможность сопоставления уровня открытости органов между собой, и будет способствовать формированию путей развития открытости для конкретного органа. Для решения этой задачи был разработан специализированный рейтинг открытости органов власти. Рейтинг охватывает федеральные органы исполнительной власти (ФОИВ), к которым относятся федеральные министерства и федеральные службы.</h2>
+              </div>
+            </div>
+          </div>
+        </section> <!-- end intro -->
+
+
+
+
+        <section class="section-wrap nopadding ov bg-dark">
+          <div class="container relative py-5">
+              <div class="row">
+          <div class="works-grid grid-1-col clearfix col-md-12 pt-90 pb-90 col" id="tablecontainer">
+
+                <div>
+                  <div role="tablist tabs tabs-bb">
+                    <ul class="nav nav-tabs">
+                      <li class="active">
+                        <a href="#tableTabContent" aria-controls="tableTabContent" role="tab" data-toggle="tab">Министерства</a>
+                      </li>
+                      <li>
+                        <a href="#tableFederalTabContent" aria-controls="tableFederalTabContent" role="tab" data-toggle="tab">Службы</a>
+                      </li>
+                      <li>
+                        <a href="#tableCorpTabContent" aria-controls="tableCorpTabContent" role="tab" data-toggle="tab">Госкорпорации</a>
+                      </li>
+                    </ul>
+                  
+
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="tableTabContent">
+                      <div id="table" class="mb-5"></div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="tableFederalTabContent">
+                      <div id="tableFederal"></div>
+                    </div>
+                    <div class="tab-pane fade" id="tableCorpTabContent">
+                      <div id="tableFederal">
+                        <div class="py-4 text-white">
+                    <h2>Открытость госкорпораций</h2>
+                    <p>В рамках подготовки рейтинга основные подходы разработанной методики оценки были применены к государственным корпорациям, которые хотя и не могут в полной мере рассматриваться как государственные органы власти, однако зачастую имеют присущие им функции, поэтому вопрос их открытости и подотчетности является предметом общественного интереса.</p>
+                    <p>При том, что госкорпорации и квазигосударственные объединения получают существенные полномочия и многомиллиардные субсидии из государственного бюджета (Ростатом, ВЭБ.РФ), управляют множеством государственных предприятий («Ростех»), имеют важнейшие социальные функции институтов развития (Агентство стратегических инициатив), все они выведены из под требований к органам власти по открытости данных. На них не распространяются требования по открытости в отношении органов власти с одной стороны, с другой – не распространяются и требования, касающиеся прозрачности акционерных обществ. В результате возникает уникальная ситуация, когда часть деятельности государства фактически выпадает из под возможности какого-либо общественного контроля. </p>
+                    <p>Являясь крупными получателями бюджетных средств, госкорпорации фактически работают на все общество, однако произведенная ценность остается недоступной обществу. Например, если сравнивать деятельность уже упомянутого выше «Роскосмоса» с деятельность американского NASA, то последнее публикует в свободном доступе в форме открытых данных большие объемы различной исследовательской информации, получаемой в космической отрасли. «Роскосмос» же никаких данных не публикует.</p>
+                    <p>В то же время государственные корпорации, в силу особенностей их деятельности, нельзя полностью отождествить с государственными институтами. Например, от них требуется соблюдение коммерческой тайны – то есть, требования открытости по отношению к ним должны учитывать специфику их деятельности так, чтобы ей не препятствовать. Фактически, необходимо специальное нормативное регулирование открытости госкорпораций и других схожих организаций, которое бы, с одной стороны, учитывало их квазигосударственную деятельность, а с другой, – учитывало специфику. Пример такого разделения регулирования в российской практике присутствует в области закупок – государственные закупки регулируются своим Федеральным законом от 5 апреля 2013 года № 44-ФЗ, а для закупок госкорпораций работает более гибкий и либеральный, но также налагающий достаточно высокие обязательства по раскрытию информации Федеральный закон от 18 июля 2011 года № 223-ФЗ.</p>
+                    <p>Руководствуясь этими соображениями, мы попробовали рассмотреть госкорпорации аналогично тому, как в рамках составления рейтинга открытости государственных органов рассматривали ФОИВ, но без формального рейтингования и руководствуясь определенными ограничениями.</p>
+                    <p>Если по направлению открытости информации есть некоторый правовой регламент (в частности, Федеральный закон от 12 января 1996 года № 7-ФЗ «О некоммерческих организациях» и Федеральный закон «О закупках товаров, работ, услуг отдельными видами юридических лиц» от 18 июля 2011 года № 223-ФЗ), то по открытости данных отчетливых правовых требований к госкорпорациям вообще нет. Тем не менее, большинство госкорпораций данные публикуют. Формально это не дает право требовать публикаций данных от тех госкорпораций, которые данные не раскрывают (как «Ростех») или раскрывают в крайне незначительном объеме (как «Росатом»). Можно также предположить, что некоторые их данные публикуются опосредованно – например, передаются для публикации госорганам. Направление «открытого диалога» в рамках этого исследования по отношению к госкорпорациям не рассматривалось.</p>
+                    <p>Наконец, необходимо отметить, что некоторые госкорпорации (например, «Росатом», «Роскосмос», «Ростех») представляют собой «облачные» структуры, объединяющие в себе множество разных организаций. Такая многосоставность и отсутствие формальных отправных точек требуют особой работы по выработке методов измерения ситуации по этому направлению.</p>
+                    <p><a href="https://www.infoculture.ru/wp-content/uploads/2019/06/Otkrytost-doklad.pdf#page=87" target="blank_" class="link text-white">Карточки госкорпораций</a></p>
+                  </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+        </section>
+
+<?php include 'footer.php';?>
+
+
+  
   <script>
   
-
     createTable("#table", "data.csv");
     createTable("#tableFederal", "data-federal-office.csv");
-
-
-
     function createTable(id, datafile) {
-      var table = d3.select(id).append("table").attr("class", "display table table-fixedheader table-dark table-hover bg-transparent"),
+      var table = d3.select(id).append("table").attr("class", "display table table-dark table-hover bg-transparent"),
           thead = table.append("thead").append("tr"),
           tbody = table.append("tbody");
-
-      thead.append("th").html("Наименование").attr("class", "no-sort");
-      thead.append("th").html("Открытость информации").attr("class", "criteria criteria-first");
-      thead.append("th").html("Открытые данные").attr("class", "criteria criteria-second");
-      thead.append("th").html("Открытый диалог").attr("class", "criteria criteria-third");
-
-
+      thead.append("th").html("Наименование").attr("class", "mw-50 no-sort");
+      thead.append("th").html("Открытость&nbsp;информации");
+      thead.append("th").html("Открытые&nbsp;данные");
+      thead.append("th").html("Открытый&nbsp;диалог");
       d3.csv(datafile, function(error, data) {
         if (error) throw error;
 
         var tr = tbody.selectAll("tr")
             .data(data)
             .enter().append("tr");
-
         tr.each(function(d) {
           var self = d3.select(this);
-
           self.append("td")
               .append("a")
                   .attr("href", d.link)
@@ -161,41 +265,30 @@
                   })
                   .attr("target", "_blank")
                   .text(d.name);
-
           self.append("td")
-              .attr("class", "text-left")
+              .attr("class", "text-center")
                   .append("span")
                   .attr("class", colorCode(d.info))
                   .text(d.info);
-
           self.append("td")
-              .attr("class", "text-left")
+              .attr("class", "text-center")
                   .append("span")
                   .attr("class", colorCode(d.data))
                   .text(d.data);
-
           self.append("td")
-              .attr("class", "text-left")
+              .attr("class", "text-center")
                   .append("span")
                   .attr("class", colorCode(d.dialog))
                   .text(d.dialog);
-
         });
-
       });
     }
-
     function colorCode(rating) {
         if (rating == "A") {return "text-center cell-a bg-success rounded-circle text-dark";}
         else if (rating == "B") {return "text-center cell-b bg-warning rounded-circle";}
         else if (rating == "C") {return "text-center cell-c bg-danger rounded-circle";}
     }
-
-
-
-
   $(document).ready(function() {
-
     setTimeout(function(){
       $('table').DataTable({
           "destroy":    true,
@@ -205,12 +298,11 @@
           "info":        false,
           // "fixedHeader": true,
       });
-    }, 100);
-
+    }, 500);
     
-
   });
-
   </script>
+  
+ 
 </body>
 </html>
